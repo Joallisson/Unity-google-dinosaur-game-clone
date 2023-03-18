@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
             canJump = true;
             isGrounding = true;
             counterJump = totalCounterJump;
+           
         }
     }
 
@@ -63,6 +64,7 @@ public class Player : MonoBehaviour
             else
             {
                 canJump = false;
+                isJumping = false;
             }
            
         }
