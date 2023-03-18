@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
             canJump = true;
             isGrounding = true;
             counterJump = totalCounterJump;
-           
+
         }
     }
 
@@ -53,11 +53,11 @@ public class Player : MonoBehaviour
     private void TouchScreen()
     {
 
-        if(Input.touchCount > 0 && canJump)
+        if (Input.touchCount > 0 && canJump)
         {
             counterJump -= Time.deltaTime;
 
-            if(counterJump > 0)
+            if (counterJump > 0)
             {
                 isJumping = true;
             }
@@ -66,13 +66,14 @@ public class Player : MonoBehaviour
                 canJump = false;
                 isJumping = false;
             }
-           
+
         }
-        else if(!isGrounding)
+        else if (!isGrounding)
         {
             canJump = false;
             isJumping = false;
         }
+
     }
 
     private void Jumping()
