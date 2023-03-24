@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class Cloud : MonoBehaviour
 {
-    public GameObject cloudPrefab;
     public float time;
+    private bool isInvoking;
+    public GameObject cloudPrefab;
     private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(CreateCloud());
         gameController = FindObjectOfType<GameController>();
+        isInvoking = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        StartInvoke();
     }
 
-    private IEnumerator CreateCloud()
+    private void StartInvoke()
     {
-        while(true)
+        if(!isInvoking)
         {
-            //Debug.Log("TOTAL >>>>>>>>>>>>>>>>>" + (time - gameController.timePlus));
-            yield return new WaitForSeconds(time);
-            Instantiate(cloudPrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+            isInvoking = true;
+            float newTime = time -  gameController.timePlus;
+            Invoke("CreateCloud", newTime);
         }
-       
     }
+
+    private void CreateCloud()
+    {
+        Instantiate(cloudPrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+        isInvoking = false;
+    }
+
 }
