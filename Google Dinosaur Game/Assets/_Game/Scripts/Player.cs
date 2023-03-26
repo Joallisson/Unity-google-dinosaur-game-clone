@@ -31,6 +31,14 @@ public class Player : MonoBehaviour
         TouchScreen();
     }
 
+    private void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.gameObject.CompareTag("Cactus"))
+        {
+            Destroy(target.gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D target)
     {
         if(target.gameObject.CompareTag("Ground"))
