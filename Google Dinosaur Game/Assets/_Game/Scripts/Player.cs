@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float counterJump;
     private float totalCounterJump;
     private bool isJumping, isGrounding, canJump;
+    private Animator animatorPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
         isJumping = false;
         isGrounding = true;
         canJump = true;
+        animatorPlayer = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -92,4 +94,8 @@ public class Player : MonoBehaviour
         }
     }
     
+    public void ChangeAnimation()
+    {
+        animatorPlayer.SetBool("isRuning", true);
+    }
 }

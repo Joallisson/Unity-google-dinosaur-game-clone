@@ -5,6 +5,7 @@ using UnityEngine;
 public class CactusInstantiete : MonoBehaviour
 {
     public GameObject[] cactus;
+    public Transform cactosParent;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class CactusInstantiete : MonoBehaviour
                 posY = this.transform.position.y - 0.2f;
             }
            
-            Instantiate(cactus[newCactoIndex], new Vector2(this.transform.position.x, posY), Quaternion.identity);
+            Instantiate(cactus[newCactoIndex], new Vector2(this.transform.position.x, posY), Quaternion.identity, cactosParent);
         }
     }
 }

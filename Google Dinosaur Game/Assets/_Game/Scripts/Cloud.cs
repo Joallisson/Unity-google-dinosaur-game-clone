@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cloud : MonoBehaviour
 {
     public float time;
-    public GameObject cloudParent;
+    public Transform  cloudParent;
     private bool isInvoking;
     public GameObject cloudPrefab;
     private GameController gameController;
@@ -35,8 +35,7 @@ public class Cloud : MonoBehaviour
 
     private void CreateCloud()
     {
-        //cloudParent = Instantiate(cloudPrefab, new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z));
-        //cloudParent.transform.parent = Instantiate(cloudPrefab, this.transform.position, this.transform.rotation);
+        Instantiate(cloudPrefab, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity, cloudParent);
         isInvoking = false;
     }
 
