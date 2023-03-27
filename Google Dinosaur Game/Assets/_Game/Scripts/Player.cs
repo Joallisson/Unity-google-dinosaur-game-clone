@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private float totalCounterJump;
     private bool isJumping, isGrounding, canJump;
     private Animator animatorPlayer;
+    private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         isGrounding = true;
         canJump = true;
         animatorPlayer = GetComponentInChildren<Animator>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     private void FixedUpdate()
@@ -37,7 +39,7 @@ public class Player : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Cactus"))
         {
-            Destroy(target.gameObject);
+            gameController.GameOver();
         }
     }
 

@@ -5,12 +5,14 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     private Player player;
-    public GameObject startGamePanel;
+    public GameObject startGamePanel, gameOverPanel;
+    private GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -23,5 +25,12 @@ public class UIController : MonoBehaviour
     {
         player.ChangeAnimation();
         startGamePanel.SetActive(false);
+        gameController.StartGame(true);
+    }
+
+    public void ButtonRestartGame()
+    {
+        gameController.RestartGame();
+        gameOverPanel.SetActive(false);
     }
 }

@@ -25,7 +25,7 @@ public class Cloud : MonoBehaviour
 
     private void StartInvoke()
     {
-        if(!isInvoking)
+        if(!isInvoking && gameController.gameStarted)
         {
             isInvoking = true;
             float newTime = time -  gameController.timePlus;
@@ -37,6 +37,6 @@ public class Cloud : MonoBehaviour
     {
         Instantiate(cloudPrefab, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity, cloudParent);
         isInvoking = false;
-    }
+}
 
 }
