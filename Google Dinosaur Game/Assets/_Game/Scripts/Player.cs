@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D target)
     {
-        if (target.gameObject.CompareTag("Cactus"))
+        if (target.gameObject.CompareTag("Cactus") || target.gameObject.CompareTag("Bird"))
         {
             gameController.GameOver();
         }

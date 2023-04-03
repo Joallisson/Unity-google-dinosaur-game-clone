@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public bool gameStarted;
     private UIController uiController;
     private CameraMain cameraMain;
-    [SerializeField] private GameObject cactoParent, cloudParent;
+    [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,11 @@ public class GameController : MonoBehaviour
         }
 
         foreach(Transform child in cloudParent.gameObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in birdParent.gameObject.transform)
         {
             Destroy(child.gameObject);
         }
