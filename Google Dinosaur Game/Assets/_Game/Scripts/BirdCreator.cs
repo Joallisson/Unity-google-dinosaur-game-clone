@@ -22,25 +22,25 @@ public class BirdCreator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timerControllerPlus = gameController.timePlus;
+        //timerControllerPlus = gameController.timePlus;
         gameStarted = gameController.gameStarted;
-        VerifyCreateBird();
+        //VerifyCreateBird();
     }
 
-    private void VerifyCreateBird()
+    public void InitCreateBird()
     {
-        if (gameStarted && !startedCreateCloud)
+        if (gameStarted)
         {
-            startedCreateCloud = true;
+            //startedCreateCloud = true;
             StartCoroutine(CreateBird());
         }
     }
 
     private IEnumerator CreateBird()
     {
-        yield return new WaitForSeconds((timer - timerControllerPlus));
+        yield return new WaitForSeconds(0f);
         Instantiate(bird, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity, birdParent);
         StopCoroutine(CreateBird());
-        startedCreateCloud = false;
+        //startedCreateCloud = false;
     }
 }

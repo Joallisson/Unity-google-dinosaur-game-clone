@@ -9,11 +9,14 @@ public class CactusInstantiete : MonoBehaviour
     private GameController gameController;
     private bool gameStarted;
     private bool startedCreateCloud;
+    [HideInInspector] public float timer;
+    private EnemiesController enemiesController;
 
     // Start is called before the first frame update
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        enemiesController = FindObjectOfType<EnemiesController>();
         gameStarted = gameController.gameStarted;
         startedCreateCloud = false;
     }
@@ -29,6 +32,7 @@ public class CactusInstantiete : MonoBehaviour
     {
         if (gameStarted && !startedCreateCloud)
         {
+            timer = enemiesController.timerCreate;
             startedCreateCloud = true;
             StartCoroutine(CreateCactus());
         }  
@@ -36,7 +40,7 @@ public class CactusInstantiete : MonoBehaviour
 
     private IEnumerator CreateCactus()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timer);
         int newCactoIndex = Random.Range(0, 6);
         float posY = this.transform.position.y;
 

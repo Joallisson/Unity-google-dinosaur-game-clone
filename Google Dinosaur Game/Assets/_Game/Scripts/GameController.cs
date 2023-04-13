@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public float timePlus;
+    public float timePlus, timerInstantiete;
     public bool gameStarted;
     private UIController uiController;
     private CameraMain cameraMain;
     [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
+    private EnemiesController enemiesController;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         uiController = FindObjectOfType<UIController>();
         cameraMain = FindObjectOfType<CameraMain>();
+        enemiesController = FindObjectOfType<EnemiesController>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class GameController : MonoBehaviour
         cameraMain.PosInitialCamera();
         Time.timeScale = 1f;
         gameStarted = true;
+        enemiesController.StopCreateEnemies();
     }
 
     public void GameOver()
