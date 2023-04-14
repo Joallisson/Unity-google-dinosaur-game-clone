@@ -17,8 +17,6 @@ public class EnemiesController : MonoBehaviour
         startedCoroutine = false;
         cactoCreate = FindObjectOfType<CactusInstantiete>();
         birdCreate = FindObjectOfType<BirdCreator>();
-        cactoCreate.gameObject.SetActive(false);
-        //birdCreate.gameObject.SetActive(false);
         gameController = FindObjectOfType<GameController>();
     }
 
@@ -41,9 +39,19 @@ public class EnemiesController : MonoBehaviour
 
     private IEnumerator CreateEnemy()
     {
+        int numberRandomEnemy = Random.Range(1, 11);
+       
         yield return new WaitForSeconds(timerInterval);
-        Debug.Log(">>>>>>>>>>>>>>>>>>>>> CRIOU UM INIMIGO");
-        birdCreate.InitCreateBird();
+
+        if (numberRandomEnemy <= 3)
+        {
+            birdCreate.CreateBird();
+        }
+        else
+        {
+            cactoCreate.CreateCactus();
+        }
+
         StopCoroutine(CreateEnemy());
         startedCoroutine = false;
     }

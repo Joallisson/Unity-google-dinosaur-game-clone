@@ -1852,6 +1852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerCreate: 0
+  timerInterval: 3
 --- !u!4 &1465880892
 Transform:
   m_ObjectHideFlags: 0
@@ -1892,7 +1893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608481382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: -3.2, z: 10}
+  m_LocalPosition: {x: 14.5, y: -4.2, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1919,6 +1920,7 @@ MonoBehaviour:
   - {fileID: 2816267907083426320, guid: b3c10262bfd1e184c97984e5fcfce931, type: 3}
   - {fileID: 3805817711473149906, guid: 2d4781942935fa244bbeb3c9abddbd77, type: 3}
   cactosParent: {fileID: 1916638971}
+  timer: 0
 --- !u!1 &1642524211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,7 +2178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916638970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.262976, y: 0.8348135, z: -8.047083}
+  m_LocalPosition: {x: 15.262976, y: 0, z: -8.047083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

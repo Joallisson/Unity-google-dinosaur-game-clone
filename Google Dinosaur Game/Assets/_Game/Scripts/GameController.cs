@@ -20,12 +20,6 @@ public class GameController : MonoBehaviour
         enemiesController = FindObjectOfType<EnemiesController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
-
     public void StartGame(bool value)
     {
         gameStarted = value;
