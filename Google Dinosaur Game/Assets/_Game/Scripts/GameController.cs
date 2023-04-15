@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public float timePlus, timerInstantiete;
+    [HideInInspector] public float timerDecrementEnemies;
+    public float addDecrementEnemies, addIncrementCamera, timerImcrementCamera;
     public bool gameStarted;
     private UIController uiController;
     private CameraMain cameraMain;
     [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
     private EnemiesController enemiesController;
+    private float savedTimerImcrementCamera, savedAddIncrementCamera;
+    private float timerCountSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,15 @@ public class GameController : MonoBehaviour
         uiController = FindObjectOfType<UIController>();
         cameraMain = FindObjectOfType<CameraMain>();
         enemiesController = FindObjectOfType<EnemiesController>();
+        timerDecrementEnemies = 0;
+        savedTimerImcrementCamera = timerImcrementCamera;
+        timerCountSpeed = 0;
+
+    }
+
+    private void Update()
+    {
+        DecrementAndIncrementSpeed();
     }
 
     public void StartGame(bool value)
@@ -32,6 +44,8 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
         gameStarted = true;
         enemiesController.StopCreateEnemies();
+        timerDecrementEnemies = 0;
+        timerImcrementCamera = savedTimerImcrementCamera;
     }
 
     public void GameOver()
@@ -60,5 +74,27 @@ public class GameController : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-    
+
+    private void DecrementAndIncrementSpeed()
+    {
+        if (gameStarted)
+        {
+            timerCountSpeed += Time.deltaTime * 10;
+            if (timerCountSpeed >= 50)
+            {
+                if (enemiesController.timerInterval - timerDecrementEnemies > 1)
+                {
+                    timerDecrementEnemies += addDecrementEnemies;
+                }
+
+                if (timerImcrementCamera < 1.6f)
+                {
+                    timerImcrementCamera += addIncrementCamera;
+                }
+
+                timerCountSpeed = 0;
+            }
+        }
+    }
+
 }

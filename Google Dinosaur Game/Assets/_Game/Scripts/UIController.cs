@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     private int countInitialTxtScore;
     private float counter, highScore;
     private string[] sizeScore = new string[5] {"00000", "0000", "000", "00", "0" };
+    private EnemiesController enemiesController;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class UIController : MonoBehaviour
         highScore = 0;
         countInitialTxtScore = 0;
         counter = countInitialTxtScore;
+        enemiesController = FindObjectOfType<EnemiesController>();
     }
 
     // Update is called once per frame
@@ -72,5 +74,7 @@ public class UIController : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("highScore");
     }
+
+    
 
 }

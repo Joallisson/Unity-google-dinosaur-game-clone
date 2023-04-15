@@ -6,8 +6,7 @@ public class EnemiesController : MonoBehaviour
 {
     private CactusInstantiete cactoCreate;
     private BirdCreator birdCreate;
-    public float timerCreate, timerInterval;
-
+    public float timerInterval;
     private bool startedGame, startedCoroutine;
     private GameController gameController;
 
@@ -41,7 +40,7 @@ public class EnemiesController : MonoBehaviour
     {
         int numberRandomEnemy = Random.Range(1, 11);
        
-        yield return new WaitForSeconds(timerInterval);
+        yield return new WaitForSeconds(timerInterval - gameController.timerDecrementEnemies);
 
         if (numberRandomEnemy <= 3)
         {
@@ -61,6 +60,4 @@ public class EnemiesController : MonoBehaviour
         StopAllCoroutines();
         startedCoroutine = false;
     }
-
-
 }

@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &23070313
 Transform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500778024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.1, y: 1.66, z: -11.491}
+  m_LocalPosition: {x: 14.5, y: 1.66, z: -11.491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -962,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959531321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.166296, y: -2.9063344, z: 10.050165}
+  m_LocalPosition: {x: -8.166296, y: -2.88, z: 10.050165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1029,7 +1029,8 @@ EdgeCollider2D:
   - {x: -1.1615915, y: -0.25705695}
   - {x: -0.6210251, y: -0.7466037}
   - {x: -0.6211052, y: -1.4042828}
-  - {x: 0.21461296, y: -1.4040854}
+  - {x: -0.24421597, y: -1.4040854}
+  - {x: -0.24384308, y: -0.85940576}
   - {x: 0.21320868, y: -0.6134088}
   - {x: 1.0545888, y: 0.51969814}
   - {x: 1.0419936, y: 1.2278644}
@@ -1705,7 +1706,7 @@ EdgeCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1851,8 +1852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96e117ee9278a744aaeb3c810474210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerCreate: 0
-  timerInterval: 3
+  timerInterval: 2
 --- !u!4 &1465880892
 Transform:
   m_ObjectHideFlags: 0
@@ -2102,8 +2102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c255c3bc084ae4d9568a341aa4be61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timePlus: 0.1
-  timerInstantiete: 0
+  timerDecrementEnemies: 0
+  addDecrementEnemies: 0.05
+  addIncrementCamera: 0.02
+  timerImcrementCamera: 0.1
   gameStarted: 0
   cactoParent: {fileID: 1916638970}
   cloudParent: {fileID: 1152703237}

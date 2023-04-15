@@ -28,7 +28,7 @@ public class Cloud : MonoBehaviour
         if(!isInvoking && gameController.gameStarted)
         {
             isInvoking = true;
-            float newTime = time -  gameController.timePlus;
+            float newTime = time -  gameController.timerDecrementEnemies;
             Invoke("CreateCloud", newTime);
         }
     }
