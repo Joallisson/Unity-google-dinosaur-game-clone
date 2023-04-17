@@ -1005,8 +1005,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &959531325
-EdgeCollider2D:
+--- !u!60 &959531325
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1019,25 +1019,42 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 1.041965, y: 1.2278643}
-  - {x: 0.036442757, y: 1.2257472}
-  - {x: 0.0344038, y: 0.37964725}
-  - {x: -0.81592274, y: -0.14019537}
-  - {x: -1.1734343, y: 0.3619609}
-  - {x: -1.1615915, y: -0.25705695}
-  - {x: -0.6210251, y: -0.7466037}
-  - {x: -0.6211052, y: -1.4042828}
-  - {x: -0.24421597, y: -1.4040854}
-  - {x: -0.24384308, y: -0.85940576}
-  - {x: 0.21320868, y: -0.6134088}
-  - {x: 1.0545888, y: 0.51969814}
-  - {x: 1.0419936, y: 1.2278644}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 0.0067424774, y: 1.3065649}
+      - {x: 0.005894661, y: 0.38078928}
+      - {x: -0.5426378, y: -0.10133505}
+      - {x: -0.80454826, y: -0.12450361}
+      - {x: -1.0320759, y: 0.3718207}
+      - {x: -1.2409248, y: 0.36619687}
+      - {x: -1.2521162, y: -0.2547462}
+      - {x: -0.71667963, y: -0.8368275}
+      - {x: -0.7225413, y: -1.396891}
+      - {x: 0.34755814, y: -1.3969412}
+      - {x: 0.3432145, y: -1.1599166}
+      - {x: 0.11862087, y: -1.1594806}
+      - {x: 0.10156345, y: -0.6854389}
+      - {x: 0.45766068, y: -0.3805673}
+      - {x: 0.47876644, y: 0.04100275}
+      - {x: 0.580636, y: 0.022175074}
+      - {x: 0.58720875, y: -0.09590793}
+      - {x: 0.72991276, y: -0.096756935}
+      - {x: 0.719625, y: 0.16367364}
+      - {x: 0.5074606, y: 0.1846714}
+      - {x: 0.51130676, y: 0.40004277}
+      - {x: 1.0183172, y: 0.38266993}
+      - {x: 1.0390716, y: 0.62283206}
+      - {x: 1.2030697, y: 0.6272023}
+      - {x: 1.130538, y: 1.3259455}
 --- !u!1 &1033019407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1618,6 @@ GameObject:
   - component: {fileID: 1348383100}
   - component: {fileID: 1348383102}
   - component: {fileID: 1348383101}
-  - component: {fileID: 1348383103}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -1696,40 +1712,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!68 &1348383103
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348383099}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.36836928, y: 0.39163285}
-  - {x: 0.037185352, y: 0.40234262}
-  - {x: 0.026766144, y: 0.13524571}
-  - {x: -0.17818767, y: -0.063819885}
-  - {x: -0.39058554, y: 0.10610297}
-  - {x: -0.3787428, y: -0.08903089}
-  - {x: -0.18186599, y: -0.26161933}
-  - {x: -0.18160373, y: -0.4335158}
-  - {x: 0.05040358, y: -0.42848885}
-  - {x: 0.04229863, y: -0.21060412}
-  - {x: 0.14953923, y: 0.027076244}
-  - {x: 0.18253827, y: 0.22429702}
-  - {x: 0.36989078, y: 0.24745376}
-  - {x: 0.36836877, y: 0.39077508}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &1385569297
 GameObject:
   m_ObjectHideFlags: 0
