@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour
     public float addDecrementEnemies;
     public bool gameStarted;
     private UIController uiController;
-    private CameraMain cameraMain;
     [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
     private EnemiesController enemiesController;
     private float savedTimerImcrementCamera, savedAddIncrementCamera;
@@ -21,13 +20,11 @@ public class GameController : MonoBehaviour
     {
         gameStarted = false;
         uiController = FindObjectOfType<UIController>();
-        cameraMain = FindObjectOfType<CameraMain>();
         enemiesController = FindObjectOfType<EnemiesController>();
         timerDecrementEnemies = 0;
         timerCountSpeed = 0;
         timerCountSpeedBackground = 0;
         InitSpeedBackgroundInfinty = speedBackgroundInfinty;
-
     }
 
     private void Update()
@@ -44,7 +41,6 @@ public class GameController : MonoBehaviour
     public void RestartGame()
     {
         DestroyAllPrefabs();
-        cameraMain.PosInitialCamera();
         Time.timeScale = 1f;
         gameStarted = true;
         enemiesController.StopCreateEnemies();
