@@ -5,14 +5,16 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [HideInInspector] public float timerDecrementEnemies;
-    public float addDecrementEnemies, addIncrementCamera, timerImcrementCamera;
+    public float addDecrementEnemies;
     public bool gameStarted;
     private UIController uiController;
     private CameraMain cameraMain;
     [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
     private EnemiesController enemiesController;
     private float savedTimerImcrementCamera, savedAddIncrementCamera;
-    private float timerCountSpeed;
+    private float timerCountSpeed, timerCountSpeedBackground;
+    public float speedBackgroundInfinty;
+    private float InitSpeedBackgroundInfinty;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,15 @@ public class GameController : MonoBehaviour
         cameraMain = FindObjectOfType<CameraMain>();
         enemiesController = FindObjectOfType<EnemiesController>();
         timerDecrementEnemies = 0;
-        savedTimerImcrementCamera = timerImcrementCamera;
         timerCountSpeed = 0;
+        timerCountSpeedBackground = 0;
+        InitSpeedBackgroundInfinty = speedBackgroundInfinty;
 
     }
 
     private void Update()
     {
+        IncrementSpeedBackgroundInfiny();
         DecrementAndIncrementSpeed();
     }
 
@@ -45,7 +49,9 @@ public class GameController : MonoBehaviour
         gameStarted = true;
         enemiesController.StopCreateEnemies();
         timerDecrementEnemies = 0;
-        timerImcrementCamera = savedTimerImcrementCamera;
+        timerCountSpeedBackground = 0;
+
+        speedBackgroundInfinty = InitSpeedBackgroundInfinty;
     }
 
     public void GameOver()
@@ -80,19 +86,29 @@ public class GameController : MonoBehaviour
         if (gameStarted)
         {
             timerCountSpeed += Time.deltaTime * 10;
-            if (timerCountSpeed >= 50)
+            if (timerCountSpeed >= 100)
             {
                 if (enemiesController.timerInterval - timerDecrementEnemies > 1)
                 {
                     timerDecrementEnemies += addDecrementEnemies;
                 }
 
-                if (timerImcrementCamera < 1.6f)
-                {
-                    timerImcrementCamera += addIncrementCamera;
-                }
-
                 timerCountSpeed = 0;
+            }
+        }
+    }
+
+    private void IncrementSpeedBackgroundInfiny()
+    {
+        if (gameStarted && speedBackgroundInfinty < 3)
+        {
+            timerCountSpeedBackground += Time.deltaTime * 10;
+
+            if (timerCountSpeedBackground >= 100)
+            {
+                speedBackgroundInfinty += InitSpeedBackgroundInfinty;
+
+                timerCountSpeedBackground = 0;
             }
         }
     }

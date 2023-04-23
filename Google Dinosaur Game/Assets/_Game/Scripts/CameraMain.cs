@@ -29,11 +29,13 @@ public class CameraMain : MonoBehaviour
 
     private void MoveCam()
     {
+        /*
         if(gameController.gameStarted)
         {
             count += Time.deltaTime * speed + gameController.timerImcrementCamera;
             cam.position = new Vector3(count, this.transform.position.y, this.transform.position.z);
         }
+        */
     }
 
     public void PosInitialCamera()

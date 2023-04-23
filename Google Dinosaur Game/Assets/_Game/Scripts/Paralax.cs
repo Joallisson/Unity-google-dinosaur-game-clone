@@ -19,7 +19,7 @@ public class Paralax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveParallax();
+        //MoveParallax();
     }
 
     private void MoveParallax()
