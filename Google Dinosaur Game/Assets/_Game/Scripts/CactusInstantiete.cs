@@ -11,8 +11,6 @@ public class CactusInstantiete : MonoBehaviour
     public void CreateCactus()
     {
         int newCactoIndex = Random.Range(0, 6);
-        float posY = this.transform.position.y;
-
-        Instantiate(cactus[newCactoIndex], new Vector2(this.transform.position.x, posY), Quaternion.identity, cactosParent);
+        Instantiate(cactus[newCactoIndex], new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity, cactosParent);
     }
 }

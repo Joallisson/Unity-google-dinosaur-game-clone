@@ -40,10 +40,9 @@ public class EnemiesController : MonoBehaviour
     {
         int numberRandomEnemy = Random.Range(1, 11);
        
-        yield return new WaitForSeconds(timerInterval - gameController.timerDecrementEnemies);
+        yield return new WaitForSeconds(1.2f);
 
-        //if (numberRandomEnemy <= 3)
-        if (false)
+        if (numberRandomEnemy <= 3)
         {
             birdCreate.CreateBird();
         }

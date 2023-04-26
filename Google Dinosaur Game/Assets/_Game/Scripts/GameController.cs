@@ -10,10 +10,9 @@ public class GameController : MonoBehaviour
     private UIController uiController;
     [SerializeField] private GameObject cactoParent, cloudParent, birdParent;
     private EnemiesController enemiesController;
-    private float savedTimerImcrementCamera, savedAddIncrementCamera;
     private float timerCountSpeed, timerCountSpeedBackground;
-    public float speedBackgroundInfinty;
-    private float InitSpeedBackgroundInfinty;
+    public float speedBackgroundInfinty, speedEnemyIncrement;
+    private float InitSpeedBackgroundInfinty, InitSpeedEnemyIncrement;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +24,13 @@ public class GameController : MonoBehaviour
         timerCountSpeed = 0;
         timerCountSpeedBackground = 0;
         InitSpeedBackgroundInfinty = speedBackgroundInfinty;
+        InitSpeedEnemyIncrement = speedEnemyIncrement;
     }
 
     private void Update()
     {
         IncrementSpeedBackgroundInfiny();
-        DecrementAndIncrementSpeed();
+        IncrementSpeedEnemy();
     }
 
     public void StartGame(bool value)
@@ -46,8 +46,8 @@ public class GameController : MonoBehaviour
         enemiesController.StopCreateEnemies();
         timerDecrementEnemies = 0;
         timerCountSpeedBackground = 0;
-
         speedBackgroundInfinty = InitSpeedBackgroundInfinty;
+        speedEnemyIncrement = InitSpeedEnemyIncrement;
     }
 
     public void GameOver()
@@ -77,18 +77,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private void DecrementAndIncrementSpeed()
+    private void IncrementSpeedEnemy()
     {
-        if (gameStarted)
+        if (gameStarted && speedEnemyIncrement < 50)
         {
             timerCountSpeed += Time.deltaTime * 10;
+
             if (timerCountSpeed >= 100)
             {
-                if (enemiesController.timerInterval - timerDecrementEnemies > 1)
-                {
-                    timerDecrementEnemies += addDecrementEnemies;
-                }
-
+                speedEnemyIncrement += InitSpeedEnemyIncrement;
                 timerCountSpeed = 0;
             }
         }

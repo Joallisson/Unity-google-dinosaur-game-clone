@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96e117ee9278a744aaeb3c810474210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerInterval: 2
+  timerInterval: 1
 --- !u!4 &1465880892
 Transform:
   m_ObjectHideFlags: 0
@@ -2146,6 +2146,7 @@ MonoBehaviour:
   cloudParent: {fileID: 1152703237}
   birdParent: {fileID: 1972694266}
   speedBackgroundInfinty: 0.05
+  speedEnemyIncrement: 2
 --- !u!4 &1689434378
 Transform:
   m_ObjectHideFlags: 0
