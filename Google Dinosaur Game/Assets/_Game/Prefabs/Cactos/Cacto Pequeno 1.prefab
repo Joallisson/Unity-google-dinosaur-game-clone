@@ -93,9 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7531989404926173097}
-  - component: {fileID: 5731042936727381655}
   - component: {fileID: -4201799533410281161}
-  - component: {fileID: -3212313282297650926}
+  - component: {fileID: 1473972249667671792}
   m_Layer: 0
   m_Name: Cacto Pequeno 1
   m_TagString: Cactus
@@ -119,32 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5731042936727381655
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693826233174212609}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0077504814, y: 0.27}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.22066635, y: 0.5255075}
-  m_EdgeRadius: 0
 --- !u!114 &-4201799533410281161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,25 +130,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf0285a06013ff46bee7561a0629079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
---- !u!50 &-3212313282297650926
-Rigidbody2D:
-  serializedVersion: 4
+  speed: 10
+--- !u!60 &1473972249667671792
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5693826233174212609}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08823785, y: 0.22018175}
+      - {x: 0.13235602, y: 0.26251623}
+      - {x: 0.13090539, y: 0.43584374}
+      - {x: 0.06868729, y: 0.43604437}
+      - {x: 0.06496653, y: 0.27103826}
+      - {x: 0.033061113, y: 0.2689018}
+      - {x: 0.029761879, y: 0.5390123}
+      - {x: -0.033976555, y: 0.5399001}
+      - {x: -0.030987173, y: 0.26326227}
+      - {x: -0.07094534, y: 0.2647426}
+      - {x: -0.07262937, y: 0.43694177}
+      - {x: -0.136659, y: 0.43849456}
+      - {x: -0.13703376, y: 0.2693776}
+      - {x: -0.034375824, y: 0.20056468}
+      - {x: -0.03199073, y: 0.0064373817}
+      - {x: 0.02670628, y: 0.0065123052}
+      - {x: 0.028025348, y: 0.21841282}

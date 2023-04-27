@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cactos : MonoBehaviour
+public class Bird : MonoBehaviour
 {
     public float speed;
     private GameController gameController;

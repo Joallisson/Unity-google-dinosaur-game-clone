@@ -953,7 +953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500778024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.448601, y: 2.109037, z: -20.334784}
+  m_LocalPosition: {x: 5.448601, y: -1.6, z: -20.334784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   cloudParent: {fileID: 1152703237}
   birdParent: {fileID: 1972694266}
   speedBackgroundInfinty: 0.05
-  speedEnemyIncrement: 2
+  speedEnemyIncrement: 1
 --- !u!4 &1689434378
 Transform:
   m_ObjectHideFlags: 0

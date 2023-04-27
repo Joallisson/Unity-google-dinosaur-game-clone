@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4620344551631943173}
   - component: {fileID: 9184781409584147401}
+  - component: {fileID: 554409468580907395}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Bird
@@ -171,3 +172,16 @@ PolygonCollider2D:
       - {x: 0.318905, y: -0.17906813}
       - {x: 0.41131377, y: -0.019127928}
       - {x: -0.09373665, y: 0.101594985}
+--- !u!114 &554409468580907395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4620344551631943172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148c325469ce13b4296377ce302045d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 9

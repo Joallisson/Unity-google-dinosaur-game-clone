@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     {
         if (target.gameObject.CompareTag("Cactus") || target.gameObject.CompareTag("Bird"))
         {
-            //gameController.GameOver();
+            gameController.GameOver();
         }
     }
 

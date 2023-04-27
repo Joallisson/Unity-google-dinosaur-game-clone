@@ -18,6 +18,15 @@ public class BirdCreator : MonoBehaviour
 
     public void CreateBird()
     {
-        Instantiate(bird, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity, birdParent);
+        int random = Random.Range(0,2);
+        float posY = -2.5f;
+
+        //Se o random for 1 então o cria o passáro em cima, se for 0 cria em baixo
+        if (random == 1f)
+        {
+            posY = 1f;
+        }
+
+        Instantiate(bird, new Vector2(this.transform.position.x, posY), Quaternion.identity, birdParent);
     }
 }

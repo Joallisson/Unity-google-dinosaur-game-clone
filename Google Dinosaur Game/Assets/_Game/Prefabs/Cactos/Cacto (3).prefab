@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2382290036186633926}
-  - component: {fileID: 7258705127894748221}
   - component: {fileID: 7062203992123378596}
-  - component: {fileID: -1281640525520881786}
+  - component: {fileID: 3195830642219730677}
   m_Layer: 0
   m_Name: Cacto (3)
   m_TagString: Cactus
@@ -35,32 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7258705127894748221
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3014708582065032540}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0021362305, y: 0.46}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1982749, y: 0.8969354}
-  m_EdgeRadius: 0
 --- !u!114 &7062203992123378596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,28 +46,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf0285a06013ff46bee7561a0629079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
---- !u!50 &-1281640525520881786
-Rigidbody2D:
-  serializedVersion: 4
+  speed: 10
+--- !u!60 &3195830642219730677
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3014708582065032540}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.54906946, y: 0.5413729}
+      - {x: 0.6115144, y: 0.5418651}
+      - {x: 0.6675245, y: 0.5886158}
+      - {x: 0.65851754, y: 0.77670604}
+      - {x: 0.5997829, y: 0.7779612}
+      - {x: 0.5959542, y: 0.6169293}
+      - {x: 0.5405526, y: 0.6193857}
+      - {x: 0.5350085, y: 0.8786885}
+      - {x: 0.43945515, y: 0.87740135}
+      - {x: 0.43931872, y: 0.36865413}
+      - {x: 0.39992222, y: 0.3668135}
+      - {x: 0.39776197, y: 0.5983702}
+      - {x: 0.32284942, y: 0.59972566}
+      - {x: 0.31820405, y: 0.4112718}
+      - {x: 0.28225532, y: 0.40822133}
+      - {x: 0.27894536, y: 0.59094214}
+      - {x: 0.27711937, y: 0.6993793}
+      - {x: 0.19529533, y: 0.699319}
+      - {x: 0.19692561, y: 0.41133162}
+      - {x: 0.1424518, y: 0.41318616}
+      - {x: 0.13232791, y: 0.9300404}
+      - {x: 0.007382095, y: 0.92863977}
+      - {x: 0.0020195544, y: 0.40977097}
+      - {x: -0.04893424, y: 0.4129788}
+      - {x: -0.061330162, y: 0.6828611}
+      - {x: -0.1567678, y: 0.68631285}
+      - {x: -0.15747626, y: 0.4296765}
+      - {x: -0.195643, y: 0.429851}
+      - {x: -0.19718604, y: 0.7277799}
+      - {x: -0.29995584, y: 0.72940975}
+      - {x: -0.29884395, y: 0.4239073}
+      - {x: -0.35893965, y: 0.42146042}
+      - {x: -0.36495993, y: 0.9318405}
+      - {x: -0.49828532, y: 0.93036884}
+      - {x: -0.50541043, y: 0.5488716}
+      - {x: -0.55199814, y: 0.54939437}
+      - {x: -0.5625957, y: 0.81992346}
+      - {x: -0.66264313, y: 0.8215802}
+      - {x: -0.66315514, y: 0.535401}
+      - {x: -0.5672186, y: 0.44285032}
+      - {x: -0.5112716, y: 0.44227654}
+      - {x: -0.5214963, y: 0.026412267}
+      - {x: 0.54034156, y: 0.026936153}
+      - {x: 0.5425809, y: 0.3139385}
 --- !u!1 &6406944900270721741
 GameObject:
   m_ObjectHideFlags: 0

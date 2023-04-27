@@ -93,9 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3329011357527060906}
-  - component: {fileID: 2999284474568526432}
   - component: {fileID: -4223668136488493333}
-  - component: {fileID: 7191315604343467706}
+  - component: {fileID: 7768731089039507253}
   m_Layer: 0
   m_Name: Cactos Pequenos 4
   m_TagString: Cactus
@@ -119,32 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2999284474568526432
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805817711473149906}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0014852285, y: 0.34}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2409918, y: 0.58754504}
-  m_EdgeRadius: 0
 --- !u!114 &-4223668136488493333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,25 +130,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf0285a06013ff46bee7561a0629079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
---- !u!50 &7191315604343467706
-Rigidbody2D:
-  serializedVersion: 4
+  speed: 10
+--- !u!60 &7768731089039507253
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3805817711473149906}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.61531395, y: 0.26564687}
+      - {x: 0.6580656, y: 0.30785355}
+      - {x: 0.66077846, y: 0.55334437}
+      - {x: 0.5987473, y: 0.55320674}
+      - {x: 0.5963905, y: 0.32885772}
+      - {x: 0.56347156, y: 0.33375105}
+      - {x: 0.561789, y: 0.6398381}
+      - {x: 0.46287608, y: 0.6399462}
+      - {x: 0.45665938, y: 0.37066147}
+      - {x: 0.42185158, y: 0.36973885}
+      - {x: 0.41671953, y: 0.5783465}
+      - {x: 0.36352992, y: 0.580984}
+      - {x: 0.3538797, y: 0.34532565}
+      - {x: 0.32136765, y: 0.34527916}
+      - {x: 0.32157367, y: 0.4978723}
+      - {x: 0.26369357, y: 0.5004673}
+      - {x: 0.25906187, y: 0.23321879}
+      - {x: 0.2206943, y: 0.23173788}
+      - {x: 0.21988654, y: 0.6384489}
+      - {x: 0.12520702, y: 0.64256215}
+      - {x: 0.11737895, y: 0.27181754}
+      - {x: 0.07977382, y: 0.27350834}
+      - {x: 0.08403484, y: 0.5817274}
+      - {x: 0.014369564, y: 0.5775298}
+      - {x: 0.015298283, y: 0.34738022}
+      - {x: -0.017574873, y: 0.34752163}
+      - {x: -0.022389345, y: 0.5600028}
+      - {x: -0.07591098, y: 0.55821085}
+      - {x: -0.08176955, y: 0.3642389}
+      - {x: -0.113896936, y: 0.36594427}
+      - {x: -0.119578935, y: 0.637306}
+      - {x: -0.21695258, y: 0.6393412}
+      - {x: -0.21973635, y: 0.28730223}
+      - {x: -0.25953922, y: 0.28745422}
+      - {x: -0.25962633, y: 0.47677258}
+      - {x: -0.316825, y: 0.4769455}
+      - {x: -0.32393017, y: 0.31398815}
+      - {x: -0.3585562, y: 0.31567392}
+      - {x: -0.3617518, y: 0.5603456}
+      - {x: -0.41657904, y: 0.56233674}
+      - {x: -0.4226466, y: 0.3248827}
+      - {x: -0.46129364, y: 0.32399163}
+      - {x: -0.46337518, y: 0.64219606}
+      - {x: -0.5574112, y: 0.64048636}
+      - {x: -0.5593036, y: 0.42268425}
+      - {x: -0.58486235, y: 0.42676118}
+      - {x: -0.58424056, y: 0.56024015}
+      - {x: -0.6550215, y: 0.55942994}
+      - {x: -0.65665764, y: 0.38465434}
+      - {x: -0.6114956, y: 0.33842596}
+      - {x: -0.5655958, y: 0.3385165}
+      - {x: -0.5673966, y: 0.0025475821}
+      - {x: 0.5579792, y: 0.0025247335}
+      - {x: 0.55916154, y: 0.2643359}
