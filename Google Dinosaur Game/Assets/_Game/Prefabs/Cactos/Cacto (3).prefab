@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2382290036186633926}
   - component: {fileID: 7258705127894748221}
+  - component: {fileID: -6999248660274272638}
   m_Layer: 0
   m_Name: Cacto (3)
   m_TagString: Cactus
@@ -24,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3014708582065032540}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -3.2, z: -15.389}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8671019533881853312}
@@ -59,6 +60,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1982749, y: 0.8969354}
   m_EdgeRadius: 0
+--- !u!114 &-6999248660274272638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014708582065032540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2b45abf31eccc439f74ef10c73af57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedEnemy: 8
 --- !u!1 &6406944900270721741
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +98,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406944900270721741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

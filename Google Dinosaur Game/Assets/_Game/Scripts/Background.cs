@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Backend : MonoBehaviour
+public class Background : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     [SerializeField] private float speedTexture;

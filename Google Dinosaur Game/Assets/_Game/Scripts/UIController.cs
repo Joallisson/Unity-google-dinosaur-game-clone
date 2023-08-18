@@ -6,25 +6,25 @@ using System;
 
 public class UIController : MonoBehaviour
 {
-    private Player player;
+    private OldPlayer player;
     public GameObject startGamePanel, gameOverPanel;
-    private GameController gameController;
+    //private GameController gameController;
     public TMP_Text txtScore, txtHighScore;
     private int countInitialTxtScore;
     private float counter, highScore;
     private string[] sizeScore = new string[5] {"00000", "0000", "000", "00", "0" };
-    private EnemiesController enemiesController;
+    //private EnemiesController enemiesController;
 
     // Start is called before the first frame update
     void Start()
     {
         ClearHighScore();
-        player = FindObjectOfType<Player>();
-        gameController = FindObjectOfType<GameController>();
+        player = FindObjectOfType<OldPlayer>();
+        //gameController = FindObjectOfType<GameController>();
         highScore = 0;
         countInitialTxtScore = 0;
         counter = countInitialTxtScore;
-        enemiesController = FindObjectOfType<EnemiesController>();
+        //enemiesController = FindObjectOfType<EnemiesController>();
     }
 
     // Update is called once per frame
@@ -37,13 +37,13 @@ public class UIController : MonoBehaviour
     {
         player.ChangeAnimation();
         startGamePanel.SetActive(false);
-        gameController.StartGame(true);
+        //gameController.StartGame(true);
        
     }
 
     public void ButtonRestartGame()
     {
-        gameController.RestartGame();
+        //gameController.RestartGame();
         gameOverPanel.SetActive(false);
         SaveHighScore();
         counter = 0;
@@ -52,12 +52,12 @@ public class UIController : MonoBehaviour
 
     private void UpdateScore()
     {
-        if (gameController.gameStarted)
-        {
-            counter += Time.deltaTime * 10;
-            string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
-            txtScore.text = scoreText;
-        }
+        //if (gameController.gameStarted)
+        //{
+        //    counter += Time.deltaTime * 10;
+        //    string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
+        //    txtScore.text = scoreText;
+        //}
     }
 
     private void SaveHighScore()
