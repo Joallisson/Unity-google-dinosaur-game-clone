@@ -6,10 +6,12 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speedEnemy;
     private float leftBorder;
+    private GameController gameController;
 
     void Start()
     {
         leftBorder = Camera.main.ScreenToViewportPoint(Vector3.zero).x -15;
+        gameController = FindObjectOfType<GameController>();
     }
 
     void Update()
@@ -20,7 +22,10 @@ public class Enemy : MonoBehaviour
 
     private void Backward()
     {
-        transform.position += new Vector3(-speedEnemy * Time.deltaTime, 0, 0);
+        if(gameController.isStartedGame)
+        {
+            transform.position += new Vector3(-speedEnemy * Time.deltaTime, 0, 0);
+        }
     }
 
     private void DestroyEnemy()

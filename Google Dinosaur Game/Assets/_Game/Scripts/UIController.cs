@@ -6,48 +6,50 @@ using System;
 
 public class UIController : MonoBehaviour
 {
-    private OldPlayer player;
     public GameObject startGamePanel, gameOverPanel;
-    //private GameController gameController;
+    private Player player;
     public TMP_Text txtScore, txtHighScore;
     private int countInitialTxtScore;
     private float counter, highScore;
     private string[] sizeScore = new string[5] {"00000", "0000", "000", "00", "0" };
-    //private EnemiesController enemiesController;
+    private GameController gameController;
 
-    // Start is called before the first frame update
+    public SpawerEnemies spawerEnemies;
+
     void Start()
     {
-        ClearHighScore();
-        player = FindObjectOfType<OldPlayer>();
-        //gameController = FindObjectOfType<GameController>();
-        highScore = 0;
-        countInitialTxtScore = 0;
-        counter = countInitialTxtScore;
-        //enemiesController = FindObjectOfType<EnemiesController>();
+        //ClearHighScore();
+        player          = FindObjectOfType<Player>();
+        gameController  = FindObjectOfType<GameController>();
+
+        //highScore = 0;
+        //countInitialTxtScore = 0;
+        //counter = countInitialTxtScore;
+
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        UpdateScore();
+        //UpdateScore();
     }
 
     public void ClickPanelStartGame()
     {
-        player.ChangeAnimation();
+        player.ChangeAnimationToRun();
         startGamePanel.SetActive(false);
-        //gameController.StartGame(true);
-       
+        gameController.StartGame();
+        spawerEnemies.gameObject.SetActive(true);
+
     }
 
     public void ButtonRestartGame()
     {
-        //gameController.RestartGame();
-        gameOverPanel.SetActive(false);
-        SaveHighScore();
-        counter = 0;
-        txtScore.text = "000000";
+
+        //gameOverPanel.SetActive(false);
+        //SaveHighScore();
+        //counter = 0;
+        //txtScore.text = "000000";
     }
 
     private void UpdateScore()
@@ -62,19 +64,19 @@ public class UIController : MonoBehaviour
 
     private void SaveHighScore()
     {
-        if(counter > highScore)
-        {
-            highScore = counter;
-            txtHighScore.text = "HI " + sizeScore[highScore.ToString("00").Length - 1] + highScore.ToString("00");
-            PlayerPrefs.SetString("highScore", highScore.ToString());
-        }
+        //if(counter > highScore)
+        //{
+        //    highScore = counter;
+        //    txtHighScore.text = "HI " + sizeScore[highScore.ToString("00").Length - 1] + highScore.ToString("00");
+        //    PlayerPrefs.SetString("highScore", highScore.ToString());
+        //}
     }
 
     private void ClearHighScore()
     {
-        PlayerPrefs.DeleteKey("highScore");
+        //PlayerPrefs.DeleteKey("highScore");
     }
 
-    
+
 
 }

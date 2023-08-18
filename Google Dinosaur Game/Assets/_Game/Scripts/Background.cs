@@ -6,9 +6,12 @@ public class Background : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     [SerializeField] private float speedTexture;
+    private GameController gameController;
+
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     void Update()
@@ -18,6 +21,9 @@ public class Background : MonoBehaviour
 
     private void Paralax()
     {
-        meshRenderer.material.mainTextureOffset += new Vector2(speedTexture * Time.deltaTime, 0);
+        if (gameController.isStartedGame)
+        {
+            meshRenderer.material.mainTextureOffset += new Vector2(speedTexture * Time.deltaTime, 0);
+        }
     }
 }
