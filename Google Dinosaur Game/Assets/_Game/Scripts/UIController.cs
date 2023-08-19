@@ -18,20 +18,20 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
-        //ClearHighScore();
+        ClearHighScore();
         player          = FindObjectOfType<Player>();
         gameController  = FindObjectOfType<GameController>();
 
-        //highScore = 0;
-        //countInitialTxtScore = 0;
-        //counter = countInitialTxtScore;
+        highScore = 0;
+        countInitialTxtScore = 0;
+        counter = countInitialTxtScore;
 
     }
 
 
     void Update()
     {
-        //UpdateScore();
+        UpdateScore();
     }
 
     public void ClickPanelStartGame()
@@ -45,36 +45,35 @@ public class UIController : MonoBehaviour
 
     public void ButtonRestartGame()
     {
-
-        //gameOverPanel.SetActive(false);
-        //SaveHighScore();
-        //counter = 0;
-        //txtScore.text = "000000";
+        gameOverPanel.SetActive(false);
+        SaveHighScore();
+        counter = 0;
+        txtScore.text = "000000";
     }
 
     private void UpdateScore()
     {
-        //if (gameController.gameStarted)
-        //{
-        //    counter += Time.deltaTime * 10;
-        //    string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
-        //    txtScore.text = scoreText;
-        //}
+        if (gameController.isStartedGame)
+        {
+            counter += Time.deltaTime * 10;
+            string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
+            txtScore.text = scoreText;
+        }
     }
 
     private void SaveHighScore()
     {
-        //if(counter > highScore)
-        //{
-        //    highScore = counter;
-        //    txtHighScore.text = "HI " + sizeScore[highScore.ToString("00").Length - 1] + highScore.ToString("00");
-        //    PlayerPrefs.SetString("highScore", highScore.ToString());
-        //}
+        if(counter > highScore)
+        {
+            highScore = counter;
+            txtHighScore.text = "HI " + sizeScore[highScore.ToString("00").Length - 1] + highScore.ToString("00");
+            PlayerPrefs.SetString("highScore", highScore.ToString());
+        }
     }
 
     private void ClearHighScore()
     {
-        //PlayerPrefs.DeleteKey("highScore");
+        PlayerPrefs.DeleteKey("highScore");
     }
 
 

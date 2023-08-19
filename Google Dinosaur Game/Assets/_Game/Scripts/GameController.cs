@@ -20,4 +20,9 @@ public class GameController : MonoBehaviour
         isStartedGame = true;
     }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+    }
+
 }

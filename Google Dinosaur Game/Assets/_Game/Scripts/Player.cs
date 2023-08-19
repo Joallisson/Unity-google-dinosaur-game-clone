@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Cactus"))
         {
-            Debug.Log("GAME OVER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            gameController.GameOver();
         }
     }
 
