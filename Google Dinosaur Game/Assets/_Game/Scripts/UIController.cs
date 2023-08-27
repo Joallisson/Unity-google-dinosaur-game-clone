@@ -6,58 +6,70 @@ using System;
 
 public class UIController : MonoBehaviour
 {
-    private OldPlayer player;
     public GameObject startGamePanel, gameOverPanel;
-    //private GameController gameController;
+    private Player player;
     public TMP_Text txtScore, txtHighScore;
     private int countInitialTxtScore;
-    private float counter, highScore;
-    private string[] sizeScore = new string[5] {"00000", "0000", "000", "00", "0" };
-    //private EnemiesController enemiesController;
+    private float counter, highScore, scoreForEachIncrement;
+    private string[] sizeScore = new string[5] { "00000", "0000", "000", "00", "0" };
+    private GameController gameController;
+    private Enemy enemy;
+    private Background background;
 
-    // Start is called before the first frame update
+    public SpawerEnemies spawerEnemies;
+
+    private const float scoreInitialForEachIncrement = 50f; //DEPOIS MUDAR PARA 200f ===================================================
+
     void Start()
     {
         ClearHighScore();
-        player = FindObjectOfType<OldPlayer>();
-        //gameController = FindObjectOfType<GameController>();
+        player          = FindObjectOfType<Player>();
+        gameController  = FindObjectOfType<GameController>();
         highScore = 0;
         countInitialTxtScore = 0;
         counter = countInitialTxtScore;
-        //enemiesController = FindObjectOfType<EnemiesController>();
+        enemy = FindObjectOfType<Enemy>();
+        background = FindObjectOfType<Background>();
+        scoreForEachIncrement = scoreInitialForEachIncrement;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         UpdateScore();
+        IncremnetSpeeds();
     }
 
     public void ClickPanelStartGame()
     {
-        player.ChangeAnimation();
+        player.ChangeAnimationToRun();
         startGamePanel.SetActive(false);
-        //gameController.StartGame(true);
-       
+        gameController.StartGame();
+        spawerEnemies.gameObject.SetActive(true);
     }
 
     public void ButtonRestartGame()
     {
-        //gameController.RestartGame();
         gameOverPanel.SetActive(false);
         SaveHighScore();
         counter = 0;
         txtScore.text = "000000";
+        player.SetInitialPosition();
+        spawerEnemies.DestroyAllEnemiesChildren();
+        Time.timeScale = 1f;
+        scoreForEachIncrement = scoreInitialForEachIncrement;
+        spawerEnemies.SetInitialVelocity();
+        background.SetInitialVelocity();
     }
 
     private void UpdateScore()
     {
-        //if (gameController.gameStarted)
-        //{
-        //    counter += Time.deltaTime * 10;
-        //    string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
-        //    txtScore.text = scoreText;
-        //}
+        if (gameController.isStartedGame)
+        {
+            counter += Time.deltaTime * 10;
+            string scoreText = sizeScore[counter.ToString("00").Length - 1] + counter.ToString("00");
+            txtScore.text = scoreText;
+        }
     }
 
     private void SaveHighScore()
@@ -75,6 +87,20 @@ public class UIController : MonoBehaviour
         PlayerPrefs.DeleteKey("highScore");
     }
 
-    
+    public void ShowGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+    }
+
+    private void IncremnetSpeeds()
+    {
+        if (counter > scoreForEachIncrement)
+        {
+            spawerEnemies.IncrementVelocitySpeed();
+            background.IncrementVelocitySpeed();
+            scoreForEachIncrement += scoreInitialForEachIncrement;
+        }
+
+    }
 
 }
