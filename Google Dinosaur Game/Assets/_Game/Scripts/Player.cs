@@ -9,12 +9,14 @@ public class Player : MonoBehaviour
     private bool isTouchingGround;
     private Animator animator;
     private GameController gameController;
+    [HideInInspector] public Vector3 initialPosition;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         gameController = FindObjectOfType<GameController>();
+        initialPosition = transform.position;
     }
 
     
@@ -59,6 +61,11 @@ public class Player : MonoBehaviour
     public void ChangeAnimationToRun()
     {
         animator.SetBool("isRuning", true);
+    }
+
+    public void SetInitialPosition()
+    {
+        transform.position = initialPosition;
     }
 
 }

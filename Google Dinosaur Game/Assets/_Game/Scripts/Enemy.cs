@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float speedEnemy;
+    private SpawerEnemies spawerEnemies;
+    private float speedEnemy;
+
     private float leftBorder;
     private GameController gameController;
 
@@ -12,6 +14,8 @@ public class Enemy : MonoBehaviour
     {
         leftBorder = Camera.main.ScreenToViewportPoint(Vector3.zero).x -15;
         gameController = FindObjectOfType<GameController>();
+        spawerEnemies = FindObjectOfType<SpawerEnemies>();
+        speedEnemy = spawerEnemies.speedEnemy;
     }
 
     void Update()
