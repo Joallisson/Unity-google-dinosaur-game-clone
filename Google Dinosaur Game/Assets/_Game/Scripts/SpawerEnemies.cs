@@ -8,16 +8,17 @@ public class SpawerEnemies : MonoBehaviour
     [SerializeField] private GameObject cactusParent;
     private GameController gameController;
     private float initailSpeedEnemy;
-    private float currentTime = 0f;
+    private float currentTime, initialTotalTimeInstantiate;
 
-    public float totalTimeInstantiate;
+    [SerializeField] private float totalTimeInstantiate;
     public float speedEnemy;
 
     void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        //InvokeRepeating(nameof(SpawerEnemy), 2f, 4f);
         initailSpeedEnemy = speedEnemy;
+        currentTime = 0f;
+        initialTotalTimeInstantiate = totalTimeInstantiate;
     }
 
     void Update()
@@ -68,5 +69,20 @@ public class SpawerEnemies : MonoBehaviour
     public void SetInitialVelocity()
     {
         speedEnemy = initailSpeedEnemy;
+    }
+
+    public float GetTotalTimeInstantiate()
+    {
+        return totalTimeInstantiate;
+    }
+
+    public void SubtractTotalTimeInstantiate()
+    {
+        totalTimeInstantiate -= 0.05f;
+    }
+
+    public void SetTotalTimeInstantiateForInitialValue()
+    {
+        totalTimeInstantiate = initialTotalTimeInstantiate;
     }
 }

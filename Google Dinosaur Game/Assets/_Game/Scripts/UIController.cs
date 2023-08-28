@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     private Player player;
     public TMP_Text txtScore, txtHighScore;
     private int countInitialTxtScore;
-    private float counter, highScore, scoreForEachIncrement;
+    private float counter, highScore, scoreForEachIncrement, scoreForEachDecrement;
     private string[] sizeScore = new string[5] { "00000", "0000", "000", "00", "0" };
     private GameController gameController;
     private Enemy enemy;
@@ -19,6 +19,7 @@ public class UIController : MonoBehaviour
     public SpawerEnemies spawerEnemies;
 
     private const float scoreInitialForEachIncrement = 50f; //DEPOIS MUDAR PARA 200f ===================================================
+    private const float scoreForEachDecremntInTimeInstantiate = 50f; ////DEPOIS MUDAR PARA 500f ===================================================
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class UIController : MonoBehaviour
         enemy = FindObjectOfType<Enemy>();
         background = FindObjectOfType<Background>();
         scoreForEachIncrement = scoreInitialForEachIncrement;
+        scoreForEachDecrement = scoreForEachDecremntInTimeInstantiate;
     }
 
 
@@ -60,6 +62,8 @@ public class UIController : MonoBehaviour
         scoreForEachIncrement = scoreInitialForEachIncrement;
         spawerEnemies.SetInitialVelocity();
         background.SetInitialVelocity();
+        spawerEnemies.SetTotalTimeInstantiateForInitialValue();
+        scoreForEachDecrement = scoreForEachDecremntInTimeInstantiate;
     }
 
     private void UpdateScore()
@@ -94,11 +98,17 @@ public class UIController : MonoBehaviour
 
     private void IncremnetSpeeds()
     {
-        if (counter > scoreForEachIncrement)
+        if (counter > scoreForEachIncrement && spawerEnemies.speedEnemy <= 61 && background.getSpeedTexture() <= 6)
         {
             spawerEnemies.IncrementVelocitySpeed();
             background.IncrementVelocitySpeed();
             scoreForEachIncrement += scoreInitialForEachIncrement;
+        }
+
+        if(spawerEnemies.GetTotalTimeInstantiate() > 0.8 && counter > scoreForEachDecrement)
+        {
+            spawerEnemies.SubtractTotalTimeInstantiate();
+            scoreForEachDecrement += scoreForEachDecremntInTimeInstantiate;
         }
 
     }

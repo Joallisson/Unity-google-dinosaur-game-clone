@@ -38,4 +38,9 @@ public class Background : MonoBehaviour
     {
         speedTexture = initailSpeedTexture;
     }
+
+    public float getSpeedTexture()
+    {
+        return speedTexture;
+    }
 }
